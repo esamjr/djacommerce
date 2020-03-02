@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="card border-0 mt-3 mr-5" style="width:100rem;">
+            <div class="card-body">
+                <p class="card-text">
+                    <div class="row">
+                        <div class="col-lg-7 col-sm-12">
+                            <div class="col-lg-4 col-md-12 mb-4">
+                            <img src="{{ object.image_item }}">
+                            </div>
+                            <p>{{object.title}} Image</p>
+                        </div>
+                        <div class="col-lg-5 col-sm-12">
+                            <p class="small">{{ object.get_category_display }}</p>
+                            {% if object.discount_price %}
+                                <p>
+                                    <strong>
+                                        <del class="text-danger">${{ object.price }}</del>
+                                    &nbsp;&nbsp;
+                                    </strong>
+                                    <span>${{ object.discount_price }}</span>
+                                </p>
+                                {% else %}
+                                <p>${{ object.price }}</p>
+                            {% endif %}
+                            <strong>Description</strong>
+                            <p>{{ object.description_item }}</p>
+                        </div>
+                    </div>
+                </p>
+                <div class="card-text mt-5 d-flex">
+                    <div class="ml-auto mr-5">
+                        <a href="{{ object.get_add_to_cart_url }}" class="badge badge-info p-2 mr-3">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

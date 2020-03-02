@@ -1,0 +1,34 @@
+.bg-dark-grey {
+  background-color: #242424 !important;
+}
+
+.btn-dark-grey {
+  color: #ffffff;
+  background-color: #242424;
+  border-color: #242424;
+}
+
+.text-dark-grey {
+  color: #242424 !important;
+}
+
+.border-radius-015 {
+  border-radius: 0.15rem !important;
+}
+
+.hoverable-bold:hover {
+  font-weight: 700 !important;
+}
+
+.scale-05-03s {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.scale-05-03s:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transform: scale(0.5) !important;
+          transform: scale(0.5) !important;
+}
+/*# sourceMappingURL=card.css.map */

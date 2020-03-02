@@ -1,0 +1,123 @@
+{% extends "core/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<main>
+    <div class="container wow fadeIn">
+        <h2 class="my-5 h2 text-center">Checkout form</h2>
+        <div class="row">
+            <div class="col-md-8 mb-4">
+                <div class="card">
+                    <!-- <form method="POST" class="card-body">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+
+                    </form> -->
+                    <form method="POST" class="card-body">
+                        {% csrf_token %}
+                        <div class="md-form mb-5">
+                            <!-- <input type='text' placeholder='1234 Main St' id='shipping_address'
+                                    name='shipping_address' class='form-control' /> -->
+                            <label for="shipping_address" class="">Address</label>
+                            {{ form.street_address }}
+
+
+                        </div>
+
+                        <div class="md-form mb-5">
+                            <!-- <input type='text' placeholder='Apartment or suite' id='shipping_address2'
+                                    name='shipping_address2' class='form-control' /> -->
+                            <label for="shipping_address2" class="">Address 2 (optional)</label>
+                            {{ form.apartment_address }}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <label for="country">Country</label>
+                                {{ form.country }}
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <label for="shipping_zip">Zip</label>
+                                <!-- <input type='text' placeholder='Zip code' id='shipping_zip' name='shipping_zip'
+                                        class='form-control' /> -->
+                                {{ form.billing_zip }}
+                                <div class="invalid-feedback">
+                                    Zip code required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            {{ form.same_shipping_address }}
+                            <label for="same_billing_address">Billing address is the
+                                same as my shipping address</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            {{form.save_info}}
+                            <label for="set_default_shipping">Save as default shipping
+                                address</label>
+                        </div>
+                        <div class="d-block my-3">
+                            <label for="payment_options">Payment Method</label>
+                            {% for value, name in form.fields.payment_options.choices %}
+                            <div class="custom-control custom-radio">
+                                <input id="{{ name }}" name="payment_options" value="{{ value }}" type="radio"
+                                    class="custom-control-input" required>
+                                <label class="custom-control-label" for="{{ name }}">{{ name }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                
+            </div>
+
+            <!-- <div class="col-md-4 mb-4">
+                {% include "core/order_summary.html" %}
+            </div> -->
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock content %}
+
+{% block extra_scripts %}
+<script>
+    var hideable_shipping_form = $('.hideable_shipping_form');
+    var hideable_billing_form = $('.hideable_billing_form');
+
+    var use_default_shipping = document.querySelector("input[name=use_default_shipping]");
+    var use_default_billing = document.querySelector("input[name=use_default_billing]");
+
+    use_default_shipping.addEventListener('change', function () {
+        if (this.checked) {
+            hideable_shipping_form.hide();
+        } else {
+            hideable_shipping_form.show();
+        }
+    })
+
+    use_default_billing.addEventListener('change', function () {
+        if (this.checked) {
+            hideable_billing_form.hide();
+        } else {
+            hideable_billing_form.show();
+        }
+    })
+</script>
+{% endblock extra_scripts %}

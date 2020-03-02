@@ -1,0 +1,20 @@
+@import '../Colors/colors';
+
+.border-radius-015 {
+    border-radius: 0.15rem !important;
+}
+
+.hoverable-bold {
+    &:hover {
+        font-weight: 700 !important;
+    }
+}
+
+.scale-05-03s {
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        transition: 0.3s ease-in-out;
+        transform: scale(0.5) !important;
+    }
+}

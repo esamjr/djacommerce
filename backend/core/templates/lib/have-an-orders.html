@@ -1,0 +1,64 @@
+<div class="row">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show ml-3" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endfor %}
+    {% endif %}
+</div>
+{% for product in ordered_products.items.all %}
+<div class="card border-radius-015 mt-3" style="width:50rem;">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <p>Shit image</p>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+                <p>
+                    <a href="{{ product.item.get_absolute_url }}" class="a-no-decoration font-weight-bold">
+                        {{ product.item.title }}
+                    </a>
+                </p>
+                <span>
+                    {% if product.item.discount_price %}
+                    <p>
+                        <del class="text-secondary ">${{ product.item.price }}</del>
+                        &nbsp;&nbsp;
+                        <span style="color:#FA591D;" class="font-weight-bold">${{ product.item.discount_price }}</span>
+                    </p>
+                    {% else %}
+                    <p>${{ product.item.price }}</p>
+                    {% endif %}
+                </span>
+                <span class="">
+                    Total item price :&nbsp;
+                    {% if product.item.discount_price %}
+                    <span style="color:#FA591D;" class="font-weight-bold">
+                        ${{ product.get_total_discount_item_price }}
+                    </span>
+                    {% else %}
+                    <span style="color:#FA591D;" class="font-weight-bold">
+                        ${{ product.get_total_item_price }}
+                    </span>
+                    {% endif %}
+                </span>
+                <span class="mt-5 float-right">
+                    <span class="mr-2">Quantity :</span>
+                    <a href="{% url 'core:decrease-quantity' product.item.slug %}">-</a>&nbsp;
+                    {{ product.quantity }}
+                    &nbsp;<a href="{% url 'core:increase-quantity' product.item.slug %}">+</a>
+                </span>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <a class="mt-1 float-right text-danger font-weight-bold" href="{% url 'core:remove-from-cart' product.item.slug %}">Remove item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

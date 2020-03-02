@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css?family=Stoke&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+.bg-dark-grey {
+  background-color: #242424 !important;
+}
+
+.btn-dark-grey {
+  color: #ffffff;
+  background-color: #242424;
+  border-color: #242424;
+}
+
+.text-dark-grey {
+  color: #242424 !important;
+}
+
+.border-radius-015 {
+  border-radius: 0.15rem !important;
+}
+
+.hoverable-bold:hover {
+  font-weight: 700 !important;
+}
+
+.scale-05-03s {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.scale-05-03s:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transform: scale(0.5) !important;
+          transform: scale(0.5) !important;
+}
+
+.bg-dark-grey {
+  background-color: #242424 !important;
+}
+
+.btn-dark-grey {
+  color: #ffffff;
+  background-color: #242424;
+  border-color: #242424;
+}
+
+.text-dark-grey {
+  color: #242424 !important;
+}
+
+.font-stoke {
+  font-family: 'Stoke', serif;
+}
+
+.font-open_sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-monserrat_alt {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-1rem {
+  font-size: 1rem;
+}
+
+.font-1_5rem {
+  font-size: 1.5rem;
+}
+
+.font-2rem {
+  font-size: 2rem;
+}
+
+.font-2_5rem {
+  font-size: 2.5rem;
+}
+
+.font-3rem {
+  font-size: 3rem;
+}
+
+.font-3_5rem {
+  font-size: 3.5rem;
+}
+
+.font-4rem {
+  font-size: 4rem;
+}
+
+.font-4_5rem {
+  font-size: 4.5rem;
+}
+
+.font-5rem {
+  font-size: 5rem;
+}
+
+.font-5_5rem {
+  font-size: 5.5rem;
+}
+
+.font-6rem {
+  font-size: 6rem;
+}
+
+.font-6_5rem {
+  font-size: 6.5rem;
+}
+
+.font-7rem {
+  font-size: 7rem;
+}
+
+.font-7_5rem {
+  font-size: 7.5rem;
+}
+
+.font-8rem {
+  font-size: 8rem;
+}
+
+.font-8_5rem {
+  font-size: 8.5rem;
+}
+
+.font-9rem {
+  font-size: 9rem;
+}
+
+.font-9_5rem {
+  font-size: 9.5rem;
+}
+
+.font-10rem {
+  font-size: 10rem;
+}
+
+.font-10_5rem {
+  font-size: 10.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+}
+
+html body {
+  overflow-x: hidden !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+html ::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+html .a-no-decoration {
+  color: #242424 !important;
+}
+
+html .a-no-decoration:hover {
+  text-decoration: none !important;
+}
+/*# sourceMappingURL=style.css.map */

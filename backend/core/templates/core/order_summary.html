@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <h2 class="mt-1">Order Summary</h2>
+    <div class="row mt-5">
+        <div class="col-lg-9 col-sm-12">
+            {% if not ordered_products %}
+            <hr>
+            <div class="text-center">
+                <h5>Whoops, your shopping basket is empty</h5>
+                <span>Instead of empty, it's better to stuff with your dreams</span><br>Come on, check now! <br>
+                <a class="btn btn-dark text-white mt-5" href="/">
+                    shop now
+                </a>
+            </div>
+            {% else %}
+            {% include 'lib/have-an-orders.html' %}
+            {% endif %}
+        </div>
+        <div class="col-lg-3 col-sm-12">
+            <div class="card border-radius-015 mt-3" style="width:20rem;">
+                <div class="card-body">
+                    <h5>Cart</h5>
+                    <hr>
+                    {% if ordered_products %}
+                    <div class="card-body">
+                        <div class="row">
+                            <p>Total price :</p>
+                            <span class="ml-auto font-weight-bold">
+                                ${{ordered_products.get_total_price}}
+                            </span>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    {% if not ordered_products %}
+                    <a href="/" class="btn btn-warning w-100">
+                        Shop now
+                    </a>
+                    {% else %}
+                    <a href="{% url 'core:checkout' %}" class="btn btn-warning w-100">
+                        Continue to checkout
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

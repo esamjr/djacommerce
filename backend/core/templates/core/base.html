@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/css/bootstrap.css' %}">
+    <title>Django Ecommerce</title>
+</head>
+
+<body>
+    {% include 'lib/navbar.html' %}
+
+    {% block content %}
+    {% endblock content %}
+
+    <script src="{% static 'vendor/js/jquery-3.4.1.slim.min.js' %}"></script>
+    <script src="{% static 'vendor/js/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>

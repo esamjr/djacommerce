@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+import os
+import subprocess
+
+if __name__ == "__main__":
+    try:
+        subprocess.call("python manage.py runserver 8000")
+    except KeyboardInterrupt:
+        print("Server has been shutdown")

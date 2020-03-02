@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Django E-commerce [Logout] {% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2>You have been Logged out</h2>
+                    <hr>
+                </div>
+                <div class="col-12">
+                    <section class="border-radius-015 logout">
+                        <small class="text-muted">
+                            You have already logout, do you want
+                            <u><a href="{% url 'login' %}">Sign in</a></u> again ?
+                        </small>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

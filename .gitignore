@@ -1,0 +1,8 @@
+.env
+.coverage
+__pycache__
+tests.py
+*migrations
+*user_image
+*htmlcov
+*vendor-bootstrap

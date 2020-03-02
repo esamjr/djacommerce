@@ -1,0 +1,25 @@
+@import 'Cards/card';
+@import 'Colors/colors';
+@import 'Fonts/fonts';
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    body {
+        // only vertical scroll
+        overflow-x: hidden !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    // Remove side scrollbar
+    ::-webkit-scrollbar {
+        width: 0 !important;
+    }
+
+    .a-no-decoration {
+        color: #242424 !important;
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+}

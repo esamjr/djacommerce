@@ -1,0 +1,77 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Hellenic [Login] {% endblock title %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+
+        <div class="col-lg-5 col-sm-12">
+            <div class="row">
+                <div class="col-12">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card border-0 p-4">
+                <section id="login">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-radius-015 mb-4 font-weight-bold">
+                                Login
+                            </legend>
+                            {{ form|crispy }}
+                        </fieldset>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-dark">
+                                Sign in
+                            </button>
+                        </div>
+
+                        <div class="border-top pt-3">
+                            <small class="text-muted">
+                                Doesn't have an account yet ?
+                                <a href="{% url 'register' %}" class="ml-2">Sign up</a>
+                            </small>
+                        </div>
+                    </form>
+
+                </section>
+            </div>
+        </div>
+
+        <div class="col-lg-6 offset-1">
+            <h2>What is Dj-Ecommerce ?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quidem quis ullam tempora vitae enim
+                laudantium error corporis libero eos accusantium, tempore facere mollitia voluptas ex veritatis maiores
+                aspernatur modi?</p>
+
+            <div class="ml-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="mt-5">What are we doing ?</h4>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quidem quis ullam tempora vitae enim
+                    laudantium error corporis libero eos accusantium, tempore facere mollitia voluptas ex veritatis
+                    maiores aspernatur modi?</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quidem quis ullam tempora vitae enim
+                    laudantium error corporis libero eos accusantium, tempore facere mollitia voluptas ex veritatis
+                    maiores aspernatur modi?</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
