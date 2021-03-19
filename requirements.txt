@@ -15,7 +15,7 @@ environ==1.0
 httpie==2.0.0
 idna==2.9
 pep8==1.7.1
-Pillow==7.0.0
+Pillow==8.1.1
 psycopg2==2.8.4
 pycodestyle==2.5.0
 Pygments==2.5.2
